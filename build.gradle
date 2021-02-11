@@ -1,9 +1,13 @@
 plugins {
-    id 'java'
+    id 'application'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group 'com.slava_bull'
+version '1.0'
+
+application{
+    mainClass = 'com.slava_bull.first_task.EntryPoint'
+}
 
 repositories {
     mavenCentral()
