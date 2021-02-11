@@ -1,4 +1,4 @@
-package com.slava_bull.first_task;
+package com.slava_bull.first_task.archive;
 
 import org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream;
 
@@ -14,7 +14,7 @@ public class Decompressor {
         BZip2CompressorInputStream bzIn = new BZip2CompressorInputStream(in);
         int buffersize = 2048;
         final byte[] buffer = new byte[buffersize];
-        int n = 0;
+        int n;
         while (-1 != (n = bzIn.read(buffer))) {
             out.write(buffer, 0, n);
         }
