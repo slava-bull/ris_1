@@ -40,4 +40,11 @@ public class OsmAnalytic {
         parser.printUserNodeCount(osmFile);
         log.info("Successfully counted users nodes.");
     }
+
+    public void printUniqTags() throws FileNotFoundException, XMLStreamException {
+        log.info("Count uniq tags...");
+        OsmParser parser = new OsmParser();
+        parser.printUniqTags(osmFile);
+        log.info("Successfully counted uniq tags.");
+    }
 }

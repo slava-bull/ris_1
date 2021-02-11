@@ -11,6 +11,7 @@ public class EntryPoint {
             OsmAnalytic analytic = new OsmAnalytic();
             analytic.decompress();
             analytic.printUserNodeCount();
+            analytic.printUniqTags();
         } catch (Exception e) {
             log.error(e.getLocalizedMessage());
         }
