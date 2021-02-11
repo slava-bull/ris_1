@@ -37,3 +37,5 @@ out/
 .vscode/
 
 /log4j.log
+/RU-NVS.osm.bz2
+/osm.xml
