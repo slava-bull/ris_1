@@ -1,5 +1,6 @@
 plugins {
     id 'application'
+    id 'com.intershop.gradle.jaxb' version '4.3.0'
 }
 
 group 'com.slava_bull'
@@ -26,8 +27,26 @@ dependencies {
     implementation 'commons-cli:commons-cli:1.4'
     //</editor-fold>
 
+    //<editor-fold desc="jaxb">
+    compile 'javax.xml.bind:jaxb-api:2.3.1'
+    jaxb group: 'javax.xml.bind', name: 'jaxb-api', version: '2.2.11'
+    jaxb group: 'com.sun.xml.bind', name: 'jaxb-core', version: '2.2.11'
+    jaxb group: 'com.sun.xml.bind', name: 'jaxb-xjc', version: '2.2.11'
+    jaxb group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '2.2.11'
+    jaxb group: 'javax.activation', name: 'activation', version: '1.1.1'
+    //</editor-fold>
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+jaxb {
+    javaGen {
+        posConfig {
+            packageName = 'com.slava_bull'
+            schema = file('src/main/resources/OSMSchema.xsd')
+        }
+    }
 }
 
 test {
