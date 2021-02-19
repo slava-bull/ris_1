@@ -3,6 +3,7 @@ package com.slava_bull.first_task.stax;
 import com.slava_bull.first_task.util.MapUtil;
 
 import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.HashMap;

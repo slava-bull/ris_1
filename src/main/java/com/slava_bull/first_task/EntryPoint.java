@@ -1,5 +1,6 @@
 package com.slava_bull.first_task;
 
+import com.slava_bull.first_task.tasks.OsmAnalytic_jaxb;
 import org.apache.log4j.Logger;
 
 public class EntryPoint {
@@ -8,10 +9,8 @@ public class EntryPoint {
 
     public static void main(String[] args) {
         try {
-            OsmAnalytic analytic = new OsmAnalytic();
-            analytic.decompress();
+            OsmAnalytic_jaxb analytic = new OsmAnalytic_jaxb();
             analytic.printUserNodeCount();
-            analytic.printUniqTags();
         } catch (Exception e) {
             log.error(e.getLocalizedMessage());
         }

@@ -1,4 +1,4 @@
-package com.slava_bull.first_task;
+package com.slava_bull.first_task.tasks;
 
 import com.slava_bull.first_task.archive.Decompressor;
 import com.slava_bull.first_task.stax.OsmParser;
@@ -8,21 +8,21 @@ import javax.xml.stream.XMLStreamException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class OsmAnalytic {
-    private final static Logger log = Logger.getLogger(OsmAnalytic.class.getName());
+public class OsmAnalytic_stax {
+    private final static Logger log = Logger.getLogger(OsmAnalytic_stax.class.getName());
 
     private final String fromFile;
     private final String osmFile;
 
-    public OsmAnalytic() {
+    public OsmAnalytic_stax() {
         this("RU-NVS.osm.bz2");
     }
 
-    public OsmAnalytic(String fromFile) {
+    public OsmAnalytic_stax(String fromFile) {
         this(fromFile, "osm.xml");
     }
 
-    public OsmAnalytic(String fromFile, String osmFile) {
+    public OsmAnalytic_stax(String fromFile, String osmFile) {
         this.fromFile = fromFile;
         this.osmFile = osmFile;
     }
