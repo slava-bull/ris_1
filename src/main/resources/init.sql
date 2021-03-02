@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS tags;
 DROP TABLE IF EXISTS nodes;
 
 CREATE TABLE nodes
@@ -8,12 +9,10 @@ CREATE TABLE nodes
     lat      DOUBLE PRECISION NOT NULL
 );
 
-DROP TABLE IF EXISTS tags;
-
 CREATE TABLE tags
 (
     nodeid BIGINT       NOT NULL REFERENCES nodes (id),
     key    VARCHAR(256) NOT NULL,
     value  VARCHAR(256) NOT NULL,
-    PRIMARY KEY (node_id, key)
+    PRIMARY KEY (nodeid, key)
 );
