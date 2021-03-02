@@ -8,21 +8,21 @@ import javax.xml.stream.XMLStreamException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class OsmAnalytic_stax {
-    private final static Logger log = Logger.getLogger(OsmAnalytic_stax.class.getName());
+public class OsmAnalyticStax {
+    private final static Logger log = Logger.getLogger(OsmAnalyticStax.class.getName());
 
     private final String fromFile;
     private final String osmFile;
 
-    public OsmAnalytic_stax() {
+    public OsmAnalyticStax() {
         this("RU-NVS.osm.bz2");
     }
 
-    public OsmAnalytic_stax(String fromFile) {
+    public OsmAnalyticStax(String fromFile) {
         this(fromFile, "osm.xml");
     }
 
-    public OsmAnalytic_stax(String fromFile, String osmFile) {
+    public OsmAnalyticStax(String fromFile, String osmFile) {
         this.fromFile = fromFile;
         this.osmFile = osmFile;
     }

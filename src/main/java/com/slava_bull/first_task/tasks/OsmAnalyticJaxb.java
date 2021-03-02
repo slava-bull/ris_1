@@ -1,29 +1,29 @@
 package com.slava_bull.first_task.tasks;
 
+import com.slava_bull.Node;
 import com.slava_bull.first_task.jaxb.NodeJaxbParser;
 import com.slava_bull.first_task.util.MapUtil;
 import org.apache.log4j.Logger;
 
-import javax.xml.stream.XMLStreamException;
-import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Consumer;
 
-public class OsmAnalytic_jaxb {
-    private final static Logger log = Logger.getLogger(OsmAnalytic_jaxb.class.getName());
+public class OsmAnalyticJaxb {
+    private final static Logger log = Logger.getLogger(OsmAnalyticJaxb.class.getName());
 
     private final String fromFile;
     private final String osmFile;
 
-    public OsmAnalytic_jaxb() {
+    public OsmAnalyticJaxb() {
         this("RU-NVS.osm.bz2");
     }
 
-    public OsmAnalytic_jaxb(String fromFile) {
+    public OsmAnalyticJaxb(String fromFile) {
         this(fromFile, "osm.xml");
     }
 
-    public OsmAnalytic_jaxb(String fromFile, String osmFile) {
+    public OsmAnalyticJaxb(String fromFile, String osmFile) {
         this.fromFile = fromFile;
         this.osmFile = osmFile;
     }
@@ -37,5 +37,10 @@ public class OsmAnalytic_jaxb {
         );
         MapUtil.sortByValue(usersNode).forEach((key, value) -> System.out.printf("%s - %d%n", key, value));
         log.info("Successfully counted users nodes.");
+    }
+
+    public void nodeProcess(Consumer<Node> nodeFunction) throws Exception {
+        NodeJaxbParser parser = new NodeJaxbParser();
+        parser.findNodes(osmFile, nodeFunction);
     }
 }

@@ -7,7 +7,6 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 import java.io.FileInputStream;
 import java.util.function.Consumer;
-import java.util.function.Function;
 
 public class NodeJaxbParser {
 

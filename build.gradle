@@ -38,8 +38,11 @@ dependencies {
     jaxb group: 'javax.activation', name: 'activation', version: '1.1.1'
     //</editor-fold>
 
+    implementation 'org.postgresql:postgresql:42.2.12'
+
     implementation 'org.projectlombok:lombok:1.18.16'
     compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
