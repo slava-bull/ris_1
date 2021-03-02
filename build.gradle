@@ -38,6 +38,9 @@ dependencies {
     jaxb group: 'javax.activation', name: 'activation', version: '1.1.1'
     //</editor-fold>
 
+    implementation 'org.projectlombok:lombok:1.18.16'
+    compileOnly 'org.projectlombok:lombok'
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
