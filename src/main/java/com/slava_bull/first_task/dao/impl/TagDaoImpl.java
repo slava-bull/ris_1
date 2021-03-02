@@ -41,7 +41,7 @@ public class TagDaoImpl implements TagDao {
     public void insertTag(Tag tag) throws SQLException {
         Connection connection = DBInitializer.getConnection();
         Statement statement = connection.createStatement();
-        String sql = String.format("insert into tags(nodeid, key, value) values (%d, %s, %s)",
+        String sql = String.format("insert into tags(nodeid, key, value) values (%d, '%s', '%s')",
                 tag.getNodeId(), tag.getKey(), tag.getValue());
         statement.execute(sql);
     }

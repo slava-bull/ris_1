@@ -24,9 +24,9 @@ public class EntryPoint {
             jaxb.nodeProcess(node -> nodeList.add(Node.fromXml(node)));
 
             long startTime = System.currentTimeMillis();
-            //service.insertNode(nodeList);
-            //service.insertPreparedNodes(nodeList);
-            //service.batchInsertNodes(nodeList);//157169ms
+            //service.insertNode(nodeList); // 5 min 70К/5КК
+            //service.insertPreparedNodes(nodeList); // 18 min 250К/5КК - устал ждать :)
+            //service.batchInsertNodes(nodeList); // 129 079ms ~2min
             long endTime = System.currentTimeMillis();
             System.out.println("Total execution time: " + (endTime - startTime) + "ms");
 

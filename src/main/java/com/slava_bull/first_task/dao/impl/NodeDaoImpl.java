@@ -6,6 +6,7 @@ import com.slava_bull.first_task.model.Node;
 
 import java.sql.*;
 import java.util.List;
+import java.util.Locale;
 
 public class NodeDaoImpl implements NodeDao {
 
@@ -37,7 +38,7 @@ public class NodeDaoImpl implements NodeDao {
     public void insertNode(Node node) throws SQLException {
         Connection connection = DBInitializer.getConnection();
         Statement statement = connection.createStatement();
-        String sql = String.format("insert into nodes(id, lon, lat, username) values(%d, %f, %f, %s)",
+        String sql = String.format(Locale.US, "insert into nodes(id, lon, lat, username) values(%d, %f, %f, '%s')",
                 node.getId(), node.getLon(), node.getLat(), node.getUser());
         statement.execute(sql);
     }
